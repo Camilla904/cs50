@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<!-- Demonstrates alert -->
+
+<html lang="en">
+    <head>
+        <title>
+            Alert
+        </title>
+        <script> //
+            alert('Hello!');
+        </script>
+    </head>
+    <body>
+        Hello, world!
+    </body>
+</html>
+
+----------------------------
+<!DOCTYPE html>
+
+<!-- Demonstrates alert with onsubmit -->
+
+<html lang="en">
+    <head>
+        <title>
+            Alert
+        </title>
+        <script>
+            function greet()
+            {
+                alert('Hello!');
+            }
+        </script>
+    </head>
+    <body>
+        <form onsubmit="greet(); return false;"> //onsubmit代表了我们会发生哪些行为如果我们点击了submit
+        // return false代表问卷结束时，防止网址重新加载
+            <input type="submit"> //create a button
+        </form>
+    </body>
+</html>
+
+---------
+
+<!DOCTYPE html>
+
+<!-- Demonstrates alert that accesses the DOM -->
+
+<html lang="en">
+    <head>
+        <title>
+            Alert
+        </title>
+        <script>
+            function greet()
+            {
+                let name = document.querySelector('#name').value; 
+                //function in JS called document.querySelector. Try to find an HTML element that match particular query.
+                // It's search through the entire HTML page, looking for particular element and return back to me.
+                // #就是在找id 
+                //.value就是我们要求只返回 value attribute. 而不是整个html element
+                if (name === '')
+                {
+                    name = 'world';
+                }
+                alert('Hello, ' + name + '!');
+            }
+        </script>
+    </head>
+    <body>
+        <form onsubmit="greet(); return false;">
+            <input type="text" id="name">
+            <input type="submit">
+        </form>
+    </body>
+</html>
+
+----------------------------------------------------
+<!DOCTYPE html>
+//We can actually change the contents of elements 
+<!-- Demonstrates DOM manipulation -->
+
+<html lang="en">
+    <head>
+        <title>
+            Counter
+        </title>
+        <script>
+            let counter = 0;
+
+            function increment()
+            {
+                counter++;
+                document.querySelector('#result').innerHTML = counter; //innerHTML 我们可以得到element里面的内容并对他做出改变
+            }
+        </script>
+    </head>
+    <body>
+        <form onsubmit="increment(); return false;">
+            <input type="submit">
+        </form>
+        <div id="result">
+            0
+        </div>
+    </body>
+</html>
+
+-----------------------------------------------------------
+<!DOCTYPE html>
+
+<!-- Demonstrates onclick event handler -->
+
+<html lang="en">
+    <head>
+        <title>
+            Background
+        </title>
+    </head>
+    <body>
+        <button id="red">R</button>
+        <button id="green">G</button>
+        <button id="blue">B</button>
+        <script>
+            let body = document.querySelector('body');
+            document.querySelector('#red').onclick = function() {
+                body.style.backgroundColor = 'red';
+            }
+            document.querySelector('#green').onclick = function() {
+                body.style.backgroundColor = 'green';
+            }
+            document.querySelector('#blue').onclick = function() {
+                body.style.backgroundColor = 'blue';
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
