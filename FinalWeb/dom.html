@@ -120,13 +120,15 @@
         </title>
     </head>
     <body>
-        <button id="red">R</button>
+        <button id="red">R</button>. //add event handler to particular event handler ; 
         <button id="green">G</button>
         <button id="blue">B</button>
-        <script>
-            let body = document.querySelector('body');
-            document.querySelector('#red').onclick = function() {
+        <script>//JS read code from top to button.
+            let body = document.querySelector('body'); //declear a variable, 
+            document.querySelector('#red').onclick = function() {. //anonymous function 
                 body.style.backgroundColor = 'red';
+                //onclick is what happen when you click the #red button.
+                // onclick只是其中一种event 我们还有ondrag on keypress                                               
             }
             document.querySelector('#green').onclick = function() {
                 body.style.backgroundColor = 'green';
