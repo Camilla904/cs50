@@ -17,8 +17,82 @@
         </select>
         <script>
             document.querySelector('select').onchange = function() {
-                document.querySelector('p').style.fontSize = this.value;
+                document.querySelector('p').style.fontSize = this.value;  /keyword what caused the change event. 
             }
         </script>
     </body>
 </html>
+
+--------------------------------------------------
+<!DOCTYPE html>
+
+<!-- Demonstrates intervals -->
+
+<html lang="en">
+    <head>
+        <title>
+            Blink
+        </title>
+    </head>
+    <script>
+        function blink()
+        {
+            let body = document.querySelector('body');
+            if (body.style.visibility === 'hidden') //not current be shown
+            {
+                body.style.visibility = 'visible';
+            }
+            else
+            {
+                body.style.visibility = 'hidden';
+            }
+
+        }
+
+        // Blink every 500ms
+        window.setInterval(blink, 500);
+    </script>
+    <body>
+        Hello, world!
+    </body>
+</html>
+
+
+------------------------------------------------------
+<!DOCTYPE html>
+
+<!-- Demonstrates external JS file -->
+//我们把js的码分到另外一个js档了
+<html lang="en">
+    <head>
+        <title>
+            Blink
+        </title>
+    </head>
+    <script src="blink1.js"></script> //referencing here
+    <body>
+        Hello, world!
+    </body>
+</html>
+
+-----------------------------------------------------
+<!DOCTYPE html>
+
+<!-- Demonstrates geolocation -->
+
+<html lang="en">
+    <head>
+        <title>
+            Geolocation
+        </title>
+        <script>
+            navigator.geolocation.getCurrentPosition(function(position) { //call back funtion, function we should be called after we gotten current position
+                document.write(position.coords.latitude + ', ' + position.coords.longitude); //wtite text to html document 
+            });
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
+
+
